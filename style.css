@@ -1,0 +1,314 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #ff3b30;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: headerAnimation 1.5s ease-in-out;
+}
+
+header .logo img {
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo img:hover {
+    transform: scale(1.1); /* Hover effect on logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #d32f2f;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    height: 100vh;
+    padding: 60px 20px;
+    text-align: center;
+    background-image: url('/img/zomato.png'); /* Add your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero img {
+    width: 250px;
+    margin-bottom: 30px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.hero p {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: textPopUp 1.5s ease-in-out;
+}
+
+.hero input {
+    padding: 15px 25px;
+    width: 80%;
+    max-width: 600px;
+    border: 2px solid #ff3b30;
+    border-radius: 25px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.hero input:focus {
+    border-color: #d32f2f;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.6); /* Adding glow effect */
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    border-top: 5px solid #ff3b30; /* Adding red border to section */
+    margin-bottom: 50px;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    color: #ff3b30;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: textSlide 1s ease-out;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    animation: fadeIn 2s ease-out;
+}
+
+.about-section .about-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.about-section .about-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section .about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .about-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.about-section .about-card img:hover {
+    transform: scale(1.1);
+}
+
+.about-section .about-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.about-section .about-card p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Adding a subtle hover effect to the entire About Section */
+.about-section:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes textSlide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #ff3b30;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer .small-text {
+    font-size: 14px;
+    color: #ddd;
+}
+
+footer:hover {
+    background-color: #e53935; /* Darker red on hover */
+}
+
+/* Animations */
+@keyframes headerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes textPopUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
